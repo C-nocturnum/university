@@ -1,0 +1,64 @@
+# usual imports
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+#import additional for n-grams
+import re
+import string
+from collections import Counter
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+#load at least 2 AS MIST files into colab 
+from google.colab import files
+uploaded = files.upload()
+
+# load filenames 
+file_names = list(uploaded.keys())
+
+# preprocess = remove punctuation, convert to lowercase & tokenise
+def preprocess_text(text):
+    text = text.lower()  # convert to lowercase
+    text = re.sub(f"[{string.punctuation}]", "", text)  # remove punctuation
+    tokens = text.split()  # tokenise
+    return tokens
+
+# generate ngrams using the imported text from the AS MIST files (n= # words in the ngram)
+def generate_ngrams(tokens, n=2):
+    return [" ".join(tokens[i:i+n]) for i in range(len(tokens)-n+1)]
+
+# work out jaccard similarity
+def jaccard_similarity(ngrams1, ngrams2):
+    set1, set2 = set(ngrams1), set(ngrams2)
+    intersection = len(set1 & set2)
+    union = len(set1 | set2)
+    return intersection / union if union != 0 else 0
+
+# work out cosine similarity 
+def cosine_similarity_ngrams(ngrams1, ngrams2):
+    vectorizer = CountVectorizer().fit(ngrams1 + ngrams2)
+    vec1 = vectorizer.transform([" ".join(ngrams1)])
+    vec2 = vectorizer.transform([" ".join(ngrams2)])
+    return cosine_similarity(vec1, vec2)[0][0]
+
+# compare the 2 MIST files using ngrams and similarity metrics
+def compare_texts(file1, file2, n=2): # (n= # words in the ngram)
+    with open(file1, "r", encoding="utf-8") as f1, open(file2, "r", encoding="utf-8") as f2:
+        text1, text2 = f1.read(), f2.read()
+
+    tokens1, tokens2 = preprocess_text(text1), preprocess_text(text2)
+    ngrams1, ngrams2 = generate_ngrams(tokens1, n), generate_ngrams(tokens2, n)
+
+    jaccard = jaccard_similarity(ngrams1, ngrams2)
+    cosine = cosine_similarity_ngrams(ngrams1, ngrams2)
+
+    print(f"Jaccard Similarity ({n}-grams): {jaccard:.4f}")
+    print(f"Cosine Similarity ({n}-grams): {cosine:.4f}")
+
+# compare the 2 MIST files (n= # words in the ngram)
+if len(file_names) >= 2:
+    compare_texts(file_names[0], file_names[1], n=2)  
+else:
+    print("upload at least 2 MIST files")
