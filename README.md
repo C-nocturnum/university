@@ -24,5 +24,6 @@ Some of these notebooks are drafts or superceded work, and the repository also i
 <p> Explanation of abliterated models https://huggingface.co/blog/mlabonne/abliteration</p>
 <p>Abliterated LLM https://github.com/Orion-zhen/abliteration </p>
 <p> Prompt-induced abliterated models https://github.com/RumiAllbert/llm-abliterator</p>
-<p>Abliterated models on HugginFace https://huggingface.co/collections/failspy/abliterated-v3-664a8ad0db255eefa7d0012b </p>
+<p>Abliterated models on HugginFace https://huggingface.co/collections/failspy/abliterated-v3-664a8ad0db255eefa7d0012b and https://huggingface.co/augmxnt/Qwen2-7B-Instruct-deccp and https://huggingface.co/mradermacher/deepseek-r1-qwen-2.5-32B-ablated-GGUF and https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-abliterated-GGUF</p>
+<p>Fine-tuned, uncensored model https://huggingface.co/cognitivecomputations/WizardLM-7B-Uncensored</p>
 <p> Abliterated models on Ollama https://ollama.com/huihui_ai/deepseek-r1-abliterated</p>
