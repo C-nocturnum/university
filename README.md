@@ -22,8 +22,10 @@ Some of these notebooks are drafts or superceded work, and the repository also i
 <p> IoT Malware https://github.com/ifding/iot-malware /</p>
 <p><p><b><i>LLMs</i></b></p>
 <p> Explanation of abliterated models https://huggingface.co/blog/mlabonne/abliteration</p>
-<p>Abliterated LLM https://github.com/Orion-zhen/abliteration </p>
+<p> Cookbook for generating abliterated models https://huggingface.co/failspy/llama-3-70B-Instruct-abliterated/blob/main/ortho_cookbook.ipynb</p>
+<p> Python library/structure to ablate features in LLMs https://github.com/FailSpy/abliterator </p>
+<p>Abliterated LLM https://github.com/Orion-zhen/abliteration and fine-tuned abliterated LLM https://github.com/Patrick-j-mcbride/abliterated-llama3-finetune</p>
 <p> Prompt-induced abliterated models https://github.com/RumiAllbert/llm-abliterator</p>
 <p>Abliterated models on HugginFace https://huggingface.co/collections/failspy/abliterated-v3-664a8ad0db255eefa7d0012b and https://huggingface.co/augmxnt/Qwen2-7B-Instruct-deccp and https://huggingface.co/mradermacher/deepseek-r1-qwen-2.5-32B-ablated-GGUF and https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-abliterated-GGUF</p>
-<p>Fine-tuned, uncensored model https://huggingface.co/cognitivecomputations/WizardLM-7B-Uncensored</p>
-<p> Abliterated models on Ollama https://ollama.com/huihui_ai/deepseek-r1-abliterated</p>
+<p>Fine-tuned, uncensored models https://huggingface.co/cognitivecomputations/WizardLM-7B-Uncensored and https://huggingface.co/roleplaiapp/DeepSeek-R1-Distill-Qwen-32B-Uncensored-Q8_0-GGUF and https://huggingface.co/mradermacher/DeepSeek-R1-Distill-Qwen-14B-Uncensored-GGUF and https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-uncensored-GGUF</p>
+<p> Abliterated models on Ollama https://ollama.com/search?q=abliterated</p>
